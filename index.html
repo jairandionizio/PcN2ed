@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza com Negócios 2026 — São Bento do Norte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F5EED8;
+    --sand-dark: #E8DDB5;
+    --terracota: #C94E2B;
+    --terracota-dark: #9E3516;
+    --ocean: #1A4A6B;
+    --ocean-mid: #2A6994;
+    --ocean-light: #D4E8F5;
+    --cactus: #3B6B2A;
+    --cactus-light: #D4EBC6;
+    --charcoal: #1C1C1C;
+    --warm-white: #FDFAF3;
+    --text-muted: #6B6356;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--charcoal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        #fff 0px, #fff 1px,
+        transparent 1px, transparent 40px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        #fff 0px, #fff 1px,
+        transparent 1px, transparent 40px
+      );
+  }
+
+  .hero-accent-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--terracota), var(--ocean), var(--cactus));
+  }
+
+  .hero-waves {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .hero-waves svg {
+    width: 100%; height: 100%;
+    display: block;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 40px 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 78, 43, 0.2);
+    border: 1px solid rgba(201, 78, 43, 0.4);
+    color: #F5A68A;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--terracota);
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 900;
+    color: var(--sand);
+    line-height: 1.0;
+    margin-bottom: 24px;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracota);
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: rgba(245, 238, 216, 0.65);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 1.1s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--terracota);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--terracota-dark); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--sand);
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(245,238,216,0.3);
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(245,238,216,0.7); background: rgba(245,238,216,0.07); }
+
+  .hero-info-card {
+    background: rgba(245, 238, 216, 0.05);
+    border: 1px solid rgba(245, 238, 216, 0.12);
+    border-radius: 16px;
+    padding: 36px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-theme-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245, 238, 216, 0.4);
+    margin-bottom: 14px;
+  }
+
+  .hero-theme {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--sand);
+    line-height: 1.3;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(245,238,216,0.1);
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .info-icon {
+    width: 38px; height: 38px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .info-icon.date { background: rgba(201, 78, 43, 0.15); }
+  .info-icon.loc { background: rgba(26, 74, 107, 0.25); }
+
+  .info-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245,238,216,0.35);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-size: 15px;
+    color: var(--sand);
+    font-weight: 500;
+  }
+
+  .divider-world {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245,238,216,0.1);
+  }
+
+  .world-tag {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  .world-tag.ocean {
+    background: rgba(26, 74, 107, 0.35);
+    color: #90C9E8;
+    border: 1px solid rgba(144, 201, 232, 0.25);
+  }
+  .world-tag.sertao {
+    background: rgba(59, 107, 42, 0.35);
+    color: #9ED680;
+    border: 1px solid rgba(158, 214, 128, 0.25);
+  }
+
+  .world-divider {
+    font-size: 18px;
+    color: rgba(245,238,216,0.2);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .section-lead {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  /* ─── SOBRE ─── */
+  .about-section {
+    background: var(--sand);
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .pillar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 20px;
+    border: 1px solid var(--sand-dark);
+    transition: transform 0.2s;
+  }
+  .pillar-card:hover { transform: translateY(-3px); }
+
+  .pillar-icon { font-size: 28px; margin-bottom: 10px; }
+  .pillar-title { font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 5px; }
+  .pillar-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--ocean);
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .big-quote::before {
+    content: '"';
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    font-size: 120px;
+    color: var(--sand-dark);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .big-quote span {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── PROGRAMAÇÃO ─── */
+  .program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 52px;
+  }
+
+  .day-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #E8E1D4;
+  }
+
+  .day-header {
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .day-header.dia1 { background: var(--ocean); }
+  .day-header.dia2 { background: var(--cactus); }
+
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+  }
+
+  .day-title { color: #fff; }
+  .day-date { font-size: 12px; opacity: 0.65; font-family: 'DM Mono', monospace; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .day-name { font-size: 20px; font-weight: 600; }
+  .day-tag { font-size: 12px; opacity: 0.7; margin-top: 2px; font-weight: 300; }
+
+  .day-body {
+    background: #fff;
+    padding: 28px 32px;
+  }
+
+  .program-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #EAE4D8;
+  }
+  .program-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .program-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .dot-ocean { background: var(--ocean); }
+  .dot-cactus { background: var(--cactus); }
+  .dot-terracota { background: var(--terracota); }
+
+  .program-text .prog-title { font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 3px; }
+  .program-text .prog-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ─── PALESTRANTES ─── */
+  .speakers-section {
+    background: var(--charcoal);
+    max-width: 100%;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .speakers-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--terracota), var(--ocean));
+  }
+
+  .speakers-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 52px;
+  }
+
+  .speaker-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+    padding: 36px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .speaker-card:hover {
+    border-color: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .speaker-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .av-terracota { background: rgba(201,78,43,0.25); color: #F5A68A; }
+  .av-ocean { background: rgba(26,74,107,0.4); color: #90C9E8; }
+
+  .speaker-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--sand);
+    margin-bottom: 6px;
+  }
+
+  .speaker-role {
+    font-size: 13px;
+    color: rgba(245,238,216,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  .speaker-talk-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--terracota);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 8px;
+  }
+
+  .speaker-talk {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--sand);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .speaker-topics {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .speaker-topics li {
+    background: rgba(245,238,216,0.07);
+    border: 1px solid rgba(245,238,216,0.1);
+    color: rgba(245,238,216,0.6);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── INGRESSOS ─── */
+  .tickets-section { background: var(--warm-white); }
+
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 52px;
+  }
+
+  .ticket-card {
+    border-radius: 20px;
+    padding: 36px 28px;
+    border: 1px solid #E8E1D4;
+    background: #fff;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ticket-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.08); }
+
+  .ticket-card.featured {
+    border: 2px solid var(--ocean);
+    background: var(--ocean);
+    color: #fff;
+  }
+
+  .ticket-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--terracota);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .ticket-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .ticket-card:not(.featured) .ticket-type { color: var(--text-muted); }
+  .ticket-card.featured .ticket-type { color: rgba(245,238,216,0.55); }
+
+  .ticket-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .ticket-card:not(.featured) .ticket-name { color: var(--charcoal); }
+  .ticket-card.featured .ticket-name { color: var(--sand); }
+
+  .ticket-price {
+    margin-bottom: 8px;
+  }
+  .price-currency {
+    font-size: 16px;
+    font-weight: 600;
+    vertical-align: top;
+    margin-top: 8px;
+    display: inline-block;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .price-cents { font-size: 22px; font-weight: 700; }
+  .ticket-card:not(.featured) .price-currency,
+  .ticket-card:not(.featured) .price-amount,
+  .ticket-card:not(.featured) .price-cents { color: var(--charcoal); }
+  .ticket-card.featured .price-currency,
+  .ticket-card.featured .price-amount,
+  .ticket-card.featured .price-cents { color: var(--sand); }
+
+  .ticket-note {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .ticket-card:not(.featured) .ticket-note { color: var(--text-muted); }
+  .ticket-card.featured .ticket-note { color: rgba(245,238,216,0.55); }
+
+  .ticket-divider {
+    height: 1px;
+    margin-bottom: 24px;
+  }
+  .ticket-card:not(.featured) .ticket-divider { background: #EAE4D8; }
+  .ticket-card.featured .ticket-divider { background: rgba(255,255,255,0.15); }
+
+  .ticket-perks {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .ticket-perks li {
+    font-size: 14px;
+    padding: 6px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .ticket-card:not(.featured) .ticket-perks li { color: var(--text-muted); }
+  .ticket-card.featured .ticket-perks li { color: rgba(245,238,216,0.8); }
+
+  .perk-check { color: var(--cactus); flex-shrink: 0; }
+  .ticket-card.featured .perk-check { color: #9ED680; }
+
+  .btn-ticket {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+
+  .btn-ticket-outline {
+    background: transparent;
+    border: 2px solid var(--ocean);
+    color: var(--ocean);
+  }
+  .btn-ticket-outline:hover { background: var(--ocean); color: #fff; }
+
+  .btn-ticket-sand {
+    background: var(--sand);
+    color: var(--ocean);
+  }
+  .btn-ticket-sand:hover { background: var(--sand-dark); }
+
+  /* ─── LOCAL ─── */
+  .venue-section {
+    background: var(--sand);
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  .venue-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .venue-illustration {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+    background: var(--ocean);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .venue-map-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .venue-map-placeholder svg {
+    width: 80px; height: 80px;
+    opacity: 0.4;
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  .venue-map-placeholder p { font-size: 14px; }
+
+  .venue-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .venue-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(26,74,107,0.1);
+    color: var(--ocean);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(26,74,107,0.15);
+  }
+
+  /* ─── FRASES ─── */
+  .phrases-section {
+    background: var(--charcoal);
+    max-width: 100%;
+    padding: 80px 0;
+    overflow: hidden;
+  }
+
+  .phrases-ticker {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .phrase-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(245, 238, 216, 0.35);
+  }
+
+  .phrase-item .dot-sep {
+    width: 6px; height: 6px;
+    background: var(--terracota);
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #141414;
+    padding: 60px 0 40px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 32px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--sand);
+    margin-bottom: 14px;
+  }
+
+  .footer-brand em { color: var(--terracota); font-style: italic; }
+
+  .footer-desc {
+    font-size: 14px;
+    color: rgba(245,238,216,0.35);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,238,216,0.25);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    color: rgba(245,238,216,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--sand); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(245,238,216,0.2);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero-content { grid-template-columns: 1fr; padding: 100px 24px 140px; gap: 40px; }
+    section { padding: 72px 24px; }
+    .about-inner, .venue-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+    .program-grid, .speakers-grid, .tickets-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+    .speakers-inner, .footer-inner { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-accent-top"></div>
+
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">2ª Edição — Julho 2026</div>
+      <h1 class="hero-title">Pizza com<br><em>Negócios</em></h1>
+      <p class="hero-subtitle">
+        Um encontro estratégico onde o litoral e o interior do Rio Grande do Norte se unem para gerar oportunidades, conexões e crescimento real.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#ingressos" class="btn-primary">Garantir meu ingresso</a>
+        <a href="#programacao" class="btn-outline">Ver programação</a>
+      </div>
+    </div>
+
+    <div class="hero-info-card">
+      <p class="hero-theme-label">Tema Oficial 2026</p>
+      <p class="hero-theme"><span>"Negócios Litorâneos & Interioranos —<br>A Experiência do Empreendedor"</span></p>
+
+      <div class="info-row">
+        <div class="info-icon date">📅</div>
+        <div>
+          <p class="info-label">Data</p>
+          <p class="info-value">10 e 11 de Julho de 2026</p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon loc">📍</div>
+        <div>
+          <p class="info-label">Local</p>
+          <p class="info-value">Pousada Urca do Minhoto<br>São Bento do Norte — RN</p>
+        </div>
+      </div>
+
+      <div class="divider-world">
+        <span class="world-tag ocean">🌊 Litoral</span>
+        <span class="world-divider">×</span>
+        <span class="world-tag sertao">🌵 Interior</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-waves">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,100 C240,160 480,40 720,100 C960,160 1200,40 1440,100 L1440,200 L0,200 Z" fill="#F5EED8" opacity="0.12"/>
+      <path d="M0,140 C240,100 480,180 720,140 C960,100 1200,180 1440,140 L1440,200 L0,200 Z" fill="#FDFAF3"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ─── SOBRE ─── -->
+<div class="about-section">
+  <div class="about-inner">
+    <div>
+      <p class="section-label">O evento</p>
+      <h2 class="section-title">Onde o negócio<br>encontra propósito</h2>
+      <p class="section-lead">
+        O Pizza com Negócios vai além de um encontro empresarial. É uma experiência estratégica de desenvolvimento regional que conecta empreendedores, dados, gastronomia e cultura potiguar.
+      </p>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🤝</div>
+          <div class="pillar-title">Networking</div>
+          <div class="pillar-desc">Conexões empresariais que geram negócios reais</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">📊</div>
+          <div class="pillar-title">Inteligência</div>
+          <div class="pillar-desc">Dados e estratégia para o pequeno negócio</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🍕</div>
+          <div class="pillar-title">Gastronomia</div>
+          <div class="pillar-desc">Experiência premium em um ambiente único</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🌎</div>
+          <div class="pillar-title">Regionalismo</div>
+          <div class="pillar-desc">Valorização da identidade e economia local</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <blockquote class="big-quote">
+        <span>"Onde histórias, negócios e experiências se encontram."</span>
+      </blockquote>
+      <p style="font-size:16px; color: var(--text-muted); line-height:1.8; margin-bottom:20px;">
+        O interior possui força produtiva. O litoral possui potencial turístico e comercial. Juntos, através de conexões, comunicação e dados, ambos crescem mais.
+      </p>
+      <p style="font-size:16px; color: var(--text-muted); line-height:1.8;">
+        Em São Bento do Norte, à beira-mar do Mato Grande, o evento acontece em uma pousada que representa exatamente esse encontro de mundos.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PROGRAMAÇÃO ─── -->
+<section id="programacao">
+  <p class="section-label">Programação</p>
+  <h2 class="section-title">Dois dias de<br>experiências</h2>
+  <p class="section-lead">Palestras, painéis, cursos práticos e momentos gastronômicos estratégicos.</p>
+
+  <div class="program-grid">
+    <!-- Dia 1 -->
+    <div class="day-card">
+      <div class="day-header dia1">
+        <div class="day-num">01</div>
+        <div class="day-title">
+          <p class="day-date">10 de Julho — Sexta-feira</p>
+          <p class="day-name">Experiência, Conexão & Negócios</p>
+          <p class="day-tag">Painéis · Palestra Principal · Pizza & Conexões</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="program-item">
+          <div class="program-dot dot-ocean"></div>
+          <div class="program-text">
+            <p class="prog-title">Abertura Oficial</p>
+            <p class="prog-desc">Papo Direto: Empreender entre o litoral e o interior</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-ocean"></div>
+          <div class="program-text">
+            <p class="prog-title">Bloco 1 — Conexão Mato Grande</p>
+            <p class="prog-desc">A força dos negócios regionais: empreendedorismo local, turismo e economia regional</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-ocean"></div>
+          <div class="program-text">
+            <p class="prog-title">Bloco 2 — Lucro & Território</p>
+            <p class="prog-desc">Como negócios do litoral e interior aumentam vendas, criam identidade e fortalecem marca</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-terracota"></div>
+          <div class="program-text">
+            <p class="prog-title">Bloco 3 — Estratégia na Fatia</p>
+            <p class="prog-desc">Dados de vendas, sazonalidade e tomada de decisão para pequenos negócios</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-terracota"></div>
+          <div class="program-text">
+            <p class="prog-title">🍕 Pizza & Conexões</p>
+            <p class="prog-desc">Networking premium com experiência gastronômica e interação empresarial</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-ocean"></div>
+          <div class="program-text">
+            <p class="prog-title">Encerramento — Rede de Negócios</p>
+            <p class="prog-desc">Rodada estratégica com apresentação de empresas e oportunidades de parceria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dia 2 -->
+    <div class="day-card">
+      <div class="day-header dia2">
+        <div class="day-num">02</div>
+        <div class="day-title">
+          <p class="day-date">11 de Julho — Sábado</p>
+          <p class="day-name">Experiência Prática</p>
+          <p class="day-tag">Cursos Práticos · Aplicação Imediata</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="program-item">
+          <div class="program-dot dot-cactus"></div>
+          <div class="program-text">
+            <p class="prog-title">Curso 1 — Decifrando a sua Planilha</p>
+            <p class="prog-desc">Com Jairan Dionizio. Controle de vendas, ticket médio, produtos mais lucrativos e organização financeira básica</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-cactus"></div>
+          <div class="program-text">
+            <p class="prog-title">Entrega: Modelo de Planilha</p>
+            <p class="prog-desc">Cada participante sairá com modelo pronto e sabendo interpretar seus dados de vendas</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-terracota"></div>
+          <div class="program-text">
+            <p class="prog-title">Curso 2 — Narrativas que Vendem o Norte</p>
+            <p class="prog-desc">Com Anderson Bruno. Storytelling regional, Instagram estratégico, WhatsApp que vende e construção de marca</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-dot dot-terracota"></div>
+          <div class="program-text">
+            <p class="prog-title">Entrega: Estratégias de Comunicação</p>
+            <p class="prog-desc">Modelos de postagens e ideias aplicáveis imediatamente ao seu negócio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PALESTRANTES ─── -->
+<div class="speakers-section">
+  <div class="speakers-inner">
+    <p class="section-label" style="color: var(--terracota);">Quem fala</p>
+    <h2 class="section-title" style="color: var(--sand);">Palestrantes</h2>
+
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-avatar av-terracota">JD</div>
+        <h3 class="speaker-name">Jairan Dionizio</h3>
+        <p class="speaker-role">Palesta Principal + Curso Dia 2</p>
+        <p class="speaker-talk-label">Palestra Principal</p>
+        <p class="speaker-talk">"O que os números do seu negócio dizem sobre sua venda"</p>
+        <ul class="speaker-topics">
+          <li>Ticket médio</li>
+          <li>Sazonalidade</li>
+          <li>Perfil do consumidor</li>
+          <li>Decisão por dados</li>
+          <li>Produtos fortes</li>
+        </ul>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-avatar av-ocean">AB</div>
+        <h3 class="speaker-name">Anderson Bruno</h3>
+        <p class="speaker-role">Curso Dia 2</p>
+        <p class="speaker-talk-label">Curso Prático</p>
+        <p class="speaker-talk">"Narrativas que Vendem o Norte"</p>
+        <ul class="speaker-topics">
+          <li>Storytelling regional</li>
+          <li>Instagram estratégico</li>
+          <li>WhatsApp comercial</li>
+          <li>Posicionamento de marca</li>
+          <li>Turismo & comunicação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── INGRESSOS ─── -->
+<section id="ingressos" class="tickets-section">
+  <p class="section-label">Inscrições</p>
+  <h2 class="section-title">Escolha seu ingresso</h2>
+  <p class="section-lead">Acesso aos dois dias completos de evento. Vagas limitadas.</p>
+
+  <div class="tickets-grid">
+
+    <!-- Early Bird -->
+    <div class="ticket-card" style="position:relative;">
+      <span class="ticket-badge">🔥 Primeiros 20</span>
+      <p class="ticket-type">Early Bird</p>
+      <h3 class="ticket-name">Acesso Completo</h3>
+      <div class="ticket-price">
+        <span class="price-currency" style="color:#888;">R$</span>
+        <span class="price-amount">89</span><span class="price-cents">,90</span>
+      </div>
+      <p class="ticket-note">Apenas para os 20 primeiros inscritos</p>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li><span class="perk-check">✓</span> 2 dias de evento completo</li>
+        <li><span class="perk-check">✓</span> Palestra + Painéis (Dia 1)</li>
+        <li><span class="perk-check">✓</span> Pizza & Conexões</li>
+        <li><span class="perk-check">✓</span> Cursos práticos (Dia 2)</li>
+        <li><span class="perk-check">✓</span> Material e certificado</li>
+      </ul>
+      <a href="#" class="btn-ticket btn-ticket-outline">Quero Early Bird</a>
+    </div>
+
+    <!-- Ingresso Único — Featured -->
+    <div class="ticket-card featured">
+      <p class="ticket-type">Ingresso Único</p>
+      <h3 class="ticket-name">Acesso Completo</h3>
+      <div class="ticket-price">
+        <span class="price-currency">R$</span>
+        <span class="price-amount">120</span><span class="price-cents">,00</span>
+      </div>
+      <p class="ticket-note">Ingresso padrão — 2 dias completos</p>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li><span class="perk-check">✓</span> 2 dias de evento completo</li>
+        <li><span class="perk-check">✓</span> Palestra + Painéis (Dia 1)</li>
+        <li><span class="perk-check">✓</span> Pizza & Conexões</li>
+        <li><span class="perk-check">✓</span> Cursos práticos (Dia 2)</li>
+        <li><span class="perk-check">✓</span> Material e certificado</li>
+      </ul>
+      <a href="#" class="btn-ticket btn-ticket-sand">Garantir meu lugar</a>
+    </div>
+
+    <!-- Combo Duplo -->
+    <div class="ticket-card">
+      <p class="ticket-type">Combo Duplo</p>
+      <h3 class="ticket-name">Leve um Parceiro</h3>
+      <div class="ticket-price">
+        <span class="price-currency" style="color:#888;">R$</span>
+        <span class="price-amount">160</span><span class="price-cents">,00</span>
+      </div>
+      <p class="ticket-note">2 ingressos — R$ 80 cada pessoa</p>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li><span class="perk-check">✓</span> 2 ingressos completos</li>
+        <li><span class="perk-check">✓</span> Palestra + Painéis (Dia 1)</li>
+        <li><span class="perk-check">✓</span> Pizza & Conexões para 2</li>
+        <li><span class="perk-check">✓</span> Cursos práticos (Dia 2)</li>
+        <li><span class="perk-check">✓</span> Material e certificado</li>
+      </ul>
+      <a href="#" class="btn-ticket btn-ticket-outline">Comprar Combo</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FRASES TICKER ─── -->
+<div class="phrases-section">
+  <div class="phrases-ticker">
+    <div class="phrase-item">
+      <span>"O litoral e o interior têm algo em comum: gente que empreende."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Experiências que fortalecem negócios."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Conexões regionais geram crescimento real."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Empreender também é pertencer."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Onde histórias, negócios e experiências se encontram."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <!-- repete para loop contínuo -->
+    <div class="phrase-item">
+      <span>"O litoral e o interior têm algo em comum: gente que empreende."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Experiências que fortalecem negócios."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Conexões regionais geram crescimento real."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Empreender também é pertencer."</span>
+      <span class="dot-sep"></span>
+    </div>
+    <div class="phrase-item">
+      <span>"Onde histórias, negócios e experiências se encontram."</span>
+      <span class="dot-sep"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LOCAL ─── -->
+<div class="venue-section">
+  <div class="venue-inner">
+    <div class="venue-illustration">
+      <div class="venue-map-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <p>São Bento do Norte — RN</p>
+        <p style="margin-top:6px; font-size:12px; opacity:0.5;">Pousada Urca do Minhoto</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">O local</p>
+      <h2 class="section-title">São Bento do Norte</h2>
+      <p style="font-size:17px; color: var(--text-muted); line-height:1.8; margin-bottom:24px;">
+        Uma das joias litorâneas do Mato Grande, São Bento do Norte reúne o que há de mais especial no Rio Grande do Norte: natureza, cultura e o calor do povo potiguar.
+      </p>
+      <p style="font-size:17px; color: var(--text-muted); line-height:1.8; margin-bottom:32px;">
+        A Pousada Urca do Minhoto é o cenário perfeito para um evento que mistura negócios com experiência autêntica.
+      </p>
+
+      <div class="venue-tags">
+        <span class="venue-tag">🌊 À beira-mar</span>
+        <span class="venue-tag">🍕 Gastronomia local</span>
+        <span class="venue-tag">🤝 Espaço para networking</span>
+        <span class="venue-tag">📍 Mato Grande — RN</span>
+        <span class="venue-tag">🌵 Entre o litoral e o sertão</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Pizza com <em>Negócios</em></p>
+        <p class="footer-desc">
+          O principal encontro de empreendedorismo regional entre o litoral e o interior do Rio Grande do Norte.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Evento</p>
+        <ul class="footer-links">
+          <li><a href="#programacao">Programação</a></li>
+          <li><a href="#ingressos">Ingressos</a></li>
+          <li><a href="#">Palestrantes</a></li>
+          <li><a href="#">Local</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contato</p>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pizza com Negócios — São Bento do Norte, RN</span>
+      <span>10 e 11 de Julho de 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
